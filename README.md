@@ -1,6 +1,6 @@
 <div align="center">
 <h1>👋 Hey, I'm Devansh!</h1>
-<p>Building cool things, solving problems, and always learning. I work with AI, full stack development, and cloud tech. Feel free to check out my projects and connect!</p>
+<p>Building cool things, solving problems, and always learning. I work with AI, full stack development, and other miscellaneous tech!</p>
 </div>
 
 ---
