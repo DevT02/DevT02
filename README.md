@@ -1,10 +1,10 @@
 # Devansh Tayal 🚀
 
-[![GitHub Followers](https://img.shields.io/github/followers/DevanshTayal?label=Followers&style=social)](https://github.com/DevanshTayal)
-[![GitHub Stars](https://img.shields.io/github/stars/DevanshTayal?affiliations=OWNER&style=social)](https://github.com/DevanshTayal?tab=repositories)
+[![GitHub Followers](https://img.shields.io/github/followers/DevT02?label=Followers&style=social)](https://github.com/DevT02)
+[![GitHub Stars](https://img.shields.io/github/stars/DevT02?affiliations=OWNER&style=social)](https://github.com/DevT02?tab=repositories)
 
 ## 🔥 Most Used Technologies
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=DevanshTayal&layout=compact&theme=tokyonight&langs_count=6)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=DevT02&layout=compact&theme=tokyonight&langs_count=6)
 
 ## 📌 Most Starred Repositories
 ```yaml
@@ -21,13 +21,13 @@ jobs:
       - uses: actions/checkout@v3
       - uses: anuraghazra/github-readme-stats@master
         with:
-          username: DevanshTayal
+          username: DevT02
           show_icons: true
           theme: tokyonight
           include_all_commits: true
       - name: Update README.md
         run: |
-          curl -s "https://api.github.com/users/DevanshTayal/repos?sort=stargazers_count&per_page=5" |
+          curl -s "https://api.github.com/users/DevT02/repos?sort=stargazers_count&per_page=5" |
           jq -r '.[] | "- [\(.name)](\(.html_url)) (\(.stargazers_count) ⭐)"' > most_starred.md
           sed -i '/## 📌 Most Starred Repositories/r most_starred.md' README.md
       - name: Commit Changes
@@ -42,7 +42,7 @@ jobs:
 ---
 
 ## 📊 GitHub Stats
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=DevanshTayal&show_icons=true&theme=tokyonight&count_private=true)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=DevT02&show_icons=true&theme=tokyonight&count_private=true)
 
 ---
 
