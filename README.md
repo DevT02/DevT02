@@ -47,7 +47,7 @@
 </td>
 <td align="center" width="33%">
 <h3>🆕 Most Recent</h3>
-<a href="https://github.com/DevT02?tab=repositories&sort=created">
+<a href="https://github.com/DevT02/REPLACE-WITH-YOUR-LATEST-REPO">
 <img src="https://github-readme-stats.vercel.app/api/pin/?username=DevT02&repo=REPLACE-WITH-YOUR-LATEST-REPO&theme=gruvbox" />
 </a>
 </td>
