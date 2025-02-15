@@ -4,7 +4,7 @@
 
 ---
 
-## 📌 Most Used Technologies & Frameworks
+## 🚀 Most Used Technologies & Frameworks
 <div align="center" style="margin-bottom: 20px;">
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DevT02&layout=compact&theme=midnight-purple&langs_count=6" style="border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2)" />
 </div>
@@ -17,11 +17,11 @@
 
 <table align="center" width="100%">
 <tr>
-<td align="center" width="50%"><h3>Programming & AI</h3>
+<td align="center" width="50%"><h3>💻 Programming & AI</h3>
 <img src="https://skillicons.dev/icons?i=c,cpp,cs,python,java,mysql,ts,js,php,tailwind" /><br>
 <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,opencv" />
 </td>
-<td align="center" width="50%"><h3>Frameworks & Cloud</h3>
+<td align="center" width="50%"><h3>☁️ Frameworks & Cloud</h3>
 <img src="https://skillicons.dev/icons?i=dotnet,nextjs,react,flask,docker,gcp" />
 </td>
 </tr>
@@ -34,7 +34,7 @@
 <table>
 <tr>
 <td align="center" width="33%">
-<h3>📌 Most Starred</h3>
+<h3>⭐ Most Starred</h3>
 <a href="https://github.com/DevT02/Junk-Remover">
 <img src="https://github-readme-stats.vercel.app/api/pin/?username=DevT02&repo=Junk-Remover&theme=midnight-purple" />
 </a>
@@ -73,6 +73,6 @@
 ---
 
 <details>
-  <summary>🕵️‍♂️ Looking for some older projects?</summary>
+  <summary>🔍 Looking for some older projects?</summary>
   Some of my work from 5+ years ago can still be found <a href="https://github.com/imnobodyxd">here</a>.
 </details>
