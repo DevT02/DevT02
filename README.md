@@ -60,12 +60,19 @@
 ## 📡 Connect with Me
 <div align="center">
 <a href="https://discord.com/users/off_line" target="_blank">
-<img src="https://img.shields.io/badge/Discord-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" style="border-radius: 5px;" />
+<img src="https://skillicons.dev/icons?i=discord" alt="Discord" />
 </a>
 </div>
 
 ---
 
 <div align="center" style="font-size: 1.2em; font-weight: bold;">
-🚀 **Always open to new opportunities and collaborations!**
+🚀 Always open to new opportunities and collaborations!
 </div>
+
+---
+
+<details>
+  <summary>🕵️‍♂️ Looking for some older projects?</summary>
+  Some of my work from 5+ years ago can still be found <a href="https://github.com/imnobodyxd">here</a>.
+</details>
