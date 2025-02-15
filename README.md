@@ -1,7 +1,7 @@
 ## 📌 Most Used Technologies & Frameworks
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=DevT02&layout=compact&theme=tokyonight&langs_count=6)
 
-![Frameworks](https://skillicons.dev/icons?i=react,nextjs,angular,django,flask,dotnet)
+![Frameworks](https://skillicons.dev/icons?i=react,nextjs,angular,flask,dotnet)
 
 ---
 
