@@ -6,7 +6,7 @@
 
 ## 📌 Most Used Technologies & Frameworks
 <div align="center" style="margin-bottom: 20px;">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DevT02&layout=compact&theme=gruvbox&langs_count=6" style="border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2)" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DevT02&layout=compact&theme=midnight-purple&langs_count=6" style="border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2)" />
 </div>
 
 ---
@@ -36,19 +36,19 @@
 <td align="center" width="33%">
 <h3>📌 Most Starred</h3>
 <a href="https://github.com/DevT02/Junk-Remover">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=DevT02&repo=Junk-Remover&theme=gruvbox" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=DevT02&repo=Junk-Remover&theme=midnight-purple" />
 </a>
 </td>
 <td align="center" width="33%">
 <h3>💖 Favorite Project</h3>
 <a href="https://github.com/DevT02/notelify">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=DevT02&repo=notelify&theme=gruvbox" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=DevT02&repo=notelify&theme=midnight-purple" />
 </a>
 </td>
 <td align="center" width="33%">
 <h3>🆕 Most Recent</h3>
 <a href="https://github.com/DevT02/qUALMS-website">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=DevT02&repo=qUALMS-website&theme=gruvbox" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=DevT02&repo=qUALMS-website&theme=midnight-purple" />
 </a>
 </td>
 </tr>
@@ -59,7 +59,7 @@
 
 ## 📡 Connect with Me
 <div align="center">
-<a href="https://discord.com/users/off_line" target="_blank">
+<a href="https://discord.com/users/619720540328034304" target="_blank">
 <img src="https://skillicons.dev/icons?i=discord" alt="Discord" />
 </a>
 </div>
