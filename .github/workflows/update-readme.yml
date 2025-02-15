@@ -1,0 +1,28 @@
+name: Update README with Latest Repo
+
+on:
+  schedule:
+    - cron: "0 * * * *" # Runs every hour
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Get latest repo
+        run: |
+          LATEST_REPO=$(curl -s "https://api.github.com/users/DevT02/repos?sort=created&per_page=1" | jq -r '.[0].name')
+          echo "Latest repo: $LATEST_REPO"
+          sed -i "s|REPLACE-WITH-YOUR-LATEST-REPO|$LATEST_REPO|g" README.md
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -am "Updated README with latest repository"
+          git push
