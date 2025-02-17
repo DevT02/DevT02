@@ -77,5 +77,5 @@
 
 <details>
   <summary>🔍 Looking for some older projects?</summary>
-  Some of my work from 5+ years ago can still be found <a href="https://github.com/imnobodyxd">here</a>.
+  Some of my work from 5+ years ago can still be found <a href="https://github.com/imnobodyxd">here</a>. 🕵️ (good job this was super hidden)
 </details>
