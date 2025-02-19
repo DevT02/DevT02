@@ -33,29 +33,58 @@
 ---
 
 ## 🌟 Featured Projects
-<div align="center">
 <table>
-<tr>
-<td align="center" width="33%">
-<h3>⭐ Most Starred</h3>
-<a href="https://github.com/DevT02/Junk-Remover">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=DevT02&repo=Junk-Remover&theme=tokyonight&bg_color=00000000" />
-</a>
-</td>
-<td align="center" width="33%">
-<h3>💖 Favorite Project</h3>
-<a href="https://github.com/DevT02/notelify">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=DevT02&repo=notelify&theme=tokyonight&bg_color=00000000" />
-</a>
-</td>
-<td align="center" width="33%">
-<h3>🆕 Most Recent</h3>
-<a href="https://github.com/DevT02/qUALMS-website">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=DevT02&repo=qUALMS-website&theme=tokyonight&bg_color=00000000" />
-</a>
-</td>
-</tr>
+  <tr>
+    <td align="center" width="33%">
+      <h3>⭐ Most Starred</h3>
+      <div align="center">
+        <h4>
+          <img src="https://skillicons.dev/icons?i=cs" width="25" height="25"/>
+          <a href="https://github.com/DevT02/Junk-Remover">Junk-Remover</a>
+        </h4>
+        <p>Powerful .NET attributes cleaner that efficiently removes unused attributes and junk from compiled/obfuscated assemblies.</p>
+        <p>
+          <span><img src="https://img.shields.io/badge/C%23-239120?style=flat-square&logo=c-sharp&logoColor=white" alt="C#"></span>
+          <span><img src="https://img.shields.io/badge/Stars-21-yellow?style=flat-square" alt="Stars"></span>
+          <span><img src="https://img.shields.io/badge/Forks-9-blueviolet?style=flat-square" alt="Forks"></span>
+        </p>
+      </div>
+    </td>
+    <td align="center" width="33%">
+      <h3>💖 Favorite Project</h3>
+      <div align="center">
+        <h4>
+          <img src="https://skillicons.dev/icons?i=ts,nextjs,react" height="25"/>
+          <a href="https://github.com/DevT02/notelify">notelify</a>
+        </h4>
+        <p>Smart note-taking app that creates notes through real-time transcription of lectures, meetings, and calls using OpenAI Whisper and GPT-4o.</p>
+        <p>
+          <span><img src="https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js&logoColor=white" alt="Next.js"></span>
+          <span><img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" alt="Supabase"></span>
+          <span><img src="https://img.shields.io/badge/Vercel-black?style=flat-square&logo=vercel&logoColor=white" alt="Vercel"></span>
+        </p>
+      </div>
+    </td>
+    <td align="center" width="33%">
+      <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
+      <div align="center">
+        <h4>
+          <img src="https://skillicons.dev/icons?i=ts" height="25"/>
+          <a href="https://github.com/DevT02/qUALMS-website">qUALMS-website</a>
+        </h4>
+        <p>Modern, responsive website for the MSU linguistics club built with React, Next.js, and TypeScript.</p>
+        <p>
+          <span><img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React"></span>
+          <span><img src="https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js&logoColor=white" alt="Next.js"></span>
+        </p>
+      </div>
+    </td>
+  </tr>
 </table>
+<div align="center">
+  <a href="https://github.com/DevT02?tab=repositories">
+    <img src="https://img.shields.io/badge/View_All_Projects-238636?style=for-the-badge&logo=github" alt="View All Projects">
+  </a>
 </div>
 
 ---
