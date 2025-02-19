@@ -54,7 +54,7 @@
       <h3>💖 Favorite Project</h3>
       <div align="center">
         <h4>
-          <img src="https://skillicons.dev/icons?i=ts,nextjs,react" height="25"/>
+          <img src="https://skillicons.dev/icons?i=ts" height="25"/>
           <a href="https://github.com/DevT02/notelify">notelify</a>
         </h4>
         <p>Smart note-taking app that creates notes through real-time transcription of lectures, meetings, and calls using OpenAI Whisper and GPT-4o.</p>
