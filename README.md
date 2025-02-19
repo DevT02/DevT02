@@ -57,8 +57,9 @@
           <img src="https://skillicons.dev/icons?i=ts" height="25"/>
           <a href="https://github.com/DevT02/notelify">notelify</a>
         </h4>
-        <p>Smart note-taking app that creates notes through real-time transcription of lectures, meetings, and calls using OpenAI Whisper and GPT-4o.</p>
+        <p>Smart note-taking app that creates notes through real-time transcription of lectures, meetings, and calls using OpenAI Whisper and GPT-4o. Deployed @ notelify.co</p>
         <p>
+          <span><img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React"></span>
           <span><img src="https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js&logoColor=white" alt="Next.js"></span>
           <span><img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" alt="Supabase"></span>
           <span><img src="https://img.shields.io/badge/Vercel-black?style=flat-square&logo=vercel&logoColor=white" alt="Vercel"></span>
