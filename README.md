@@ -72,9 +72,9 @@
       <div align="center">
         <h4>
           <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-          <a href="REPLACE-WITH-LATEST-REPO-URL">REPLACE-WITH-LATEST-REPO-NAME</a>
+          <a href="https://github.com/DevT02/DevT02">DevT02</a>
         </h4>
-        <p>REPLACE-WITH-LATEST-REPO-DESCRIPTION</p>
+        <p>A recent project by Devansh.</p>
         REPLACE-LATEST-TECH-STACK
       </div>
     </td>
