@@ -17,13 +17,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Get latest repo
+      - name: Check if repository is public
+        id: check_visibility
         run: |
-          LATEST_REPO=$(curl -s "https://api.github.com/users/DevT02/repos?sort=updated&per_page=1" | jq -r '.[0].name')
+          REPO_VISIBILITY=$(curl -s "https://api.github.com/repos/${{ github.repository }}" | jq -r '.visibility')
+          echo "Repository visibility: $REPO_VISIBILITY"
+          if [ "$REPO_VISIBILITY" != "public" ]; then
+            echo "Repository is not public. Exiting."
+            exit 0
+          fi
+
+      - name: Get latest repo
+        if: steps.check_visibility.outputs.visibility == 'public'
+        run: |
+          LATEST_REPO=$(curl -s "https://api.github.com/users/DevT02/repos?sort=updated&per_page=1" | jq -r '.[0] | select(.name != null) | .name')
           echo "Latest repo: $LATEST_REPO"
           sed -i "s|REPLACE-WITH-YOUR-LATEST-REPO|$LATEST_REPO|g" README.md
 
       - name: Commit changes
+        if: steps.check_visibility.outputs.visibility == 'public'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
