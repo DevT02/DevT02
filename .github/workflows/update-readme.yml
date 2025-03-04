@@ -2,13 +2,13 @@ name: Update README with Latest Repo
 
 on:
   schedule:
-    - cron: "0 * * * *" 
+    - cron: "0 * * * *"
   push:
     branches:
       - main
 
 permissions:
-  contents: write 
+  contents: write
 
 jobs:
   update-readme:
@@ -37,7 +37,7 @@ jobs:
           REPO_URL=$(echo "$LATEST_JSON" | jq -r '.[0].html_url')
           REPO_DESCRIPTION=$(echo "$LATEST_JSON" | jq -r '.[0].description')
           
-          # If no description is provided, try to generate one using the languages used
+          # If no description is provided, generate one using the languages used
           if [ "$REPO_DESCRIPTION" = "null" ] || [ -z "$REPO_DESCRIPTION" ]; then
             LANGUAGES=$(curl -s "https://api.github.com/repos/DevT02/$REPO_NAME/languages" | jq -r 'keys | join(", ")')
             if [ -z "$LANGUAGES" ]; then
@@ -46,24 +46,51 @@ jobs:
               REPO_DESCRIPTION="A recent project built using: $LANGUAGES."
             fi
           fi
-
+          
+          # Generate tech stack HTML snippet based on languages used
+          LANGUAGES_JSON=$(curl -s "https://api.github.com/repos/DevT02/$REPO_NAME/languages")
+          TECH_STACK_HTML="<p>"
+          for lang in $(echo "$LANGUAGES_JSON" | jq -r 'keys[]'); do
+            # Convert language name to lowercase (adjust if needed)
+            lang_lower=$(echo "$lang" | tr '[:upper:]' '[:lower:]')
+            TECH_STACK_HTML+="<span><img src=\"https://skillicons.dev/icons?i=${lang_lower}\" alt=\"${lang}\"></span> "
+          done
+          TECH_STACK_HTML+="</p>"
+          
           echo "Latest Repo Name: $REPO_NAME"
           echo "Latest Repo URL: $REPO_URL"
           echo "Latest Repo Description: $REPO_DESCRIPTION"
-
+          echo "Tech Stack HTML: $TECH_STACK_HTML"
+          
           echo "repo_name=$REPO_NAME" >> $GITHUB_OUTPUT
           echo "repo_url=$REPO_URL" >> $GITHUB_OUTPUT
           echo "repo_description=$REPO_DESCRIPTION" >> $GITHUB_OUTPUT
+          echo "tech_stack_html=$TECH_STACK_HTML" >> $GITHUB_OUTPUT
 
-      - name: Update README
+      - name: Update README section
         if: steps.check_visibility.outputs.visibility == 'public'
         run: |
-          # Replace placeholders in README.md with the latest repo data.
-          # Make sure your README has the following placeholders:
-          # REPLACE-WITH-LATEST-REPO-NAME, REPLACE-WITH-LATEST-REPO-URL, REPLACE-WITH-LATEST-REPO-DESCRIPTION
-          sed -i "s|REPLACE-WITH-LATEST-REPO-NAME|${{ steps.get_latest.outputs.repo_name }}|g" README.md
-          sed -i "s|REPLACE-WITH-LATEST-REPO-URL|${{ steps.get_latest.outputs.repo_url }}|g" README.md
-          sed -i "s|REPLACE-WITH-LATEST-REPO-DESCRIPTION|${{ steps.get_latest.outputs.repo_description }}|g" README.md
+          # Build the new content block using a heredoc for proper multiline handling.
+          NEW_CONTENT=$(cat <<EOF
+<td align="center" width="33%">
+  <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
+  <div align="center">
+    <h4>
+      <img src="https://skillicons.dev/icons?i=ts" height="25"/>
+      <a href="${{ steps.get_latest.outputs.repo_url }}">${{ steps.get_latest.outputs.repo_name }}</a>
+    </h4>
+    <p>${{ steps.get_latest.outputs.repo_description }}</p>
+    ${{ steps.get_latest.outputs.tech_stack_html }}
+  </div>
+</td>
+EOF
+          )
+          
+          # Replace everything between the markers with the new content.
+          sed -i "/<!-- BEGIN LATEST REPO SECTION -->/,/<!-- END LATEST REPO SECTION -->/c\\
+<!-- BEGIN LATEST REPO SECTION -->\\
+$NEW_CONTENT\\
+<!-- END LATEST REPO SECTION -->" README.md
 
       - name: Commit changes
         if: steps.check_visibility.outputs.visibility == 'public'
@@ -71,5 +98,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "Updated README with latest repository details" || echo "No changes to commit"
+          git commit -m "Updated README with latest repository details and tech stack" || echo "No changes to commit"
           git push origin main
