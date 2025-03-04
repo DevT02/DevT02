@@ -64,7 +64,7 @@ jobs:
       - name: Update README section
         if: steps.check_visibility.outputs.visibility == 'public'
         run: |
-          NEW_CONTENT=$(cat << 'EOF'
+          NEW_CONTENT=$(cat <<EOF
           <td align="center" width="33%">
            <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
             <div align="center">
@@ -79,9 +79,14 @@ jobs:
           EOF
           )
           
-          # Escape special characters for sed
+          # Escape any characters that might conflict with the chosen delimiter (#)
           ESCAPED_CONTENT=$(printf '%s' "$NEW_CONTENT" | sed 's/[#\/&]/\\&/g')
-          sed -i "#<!-- BEGIN LATEST REPO SECTION -->#,#<!-- END LATEST REPO SECTION -->#c\<!-- BEGIN LATEST REPO SECTION -->\n$ESCAPED_CONTENT\n<!-- END LATEST REPO SECTION -->" README.md
+          # The sed command below replaces everything between the markers
+          sed -i "\#<!-- BEGIN LATEST REPO SECTION -->#,\#<!-- END LATEST REPO SECTION -->#c\
+          <!-- BEGIN LATEST REPO SECTION -->\
+          $ESCAPED_CONTENT\
+          <!-- END LATEST REPO SECTION -->" README.md
+          
       - name: Commit changes
         if: steps.check_visibility.outputs.visibility == 'public'
         run: |
