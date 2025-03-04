@@ -81,7 +81,6 @@ jobs:
           
           # Escape special characters for sed
           ESCAPED_CONTENT=$(printf '%s' "$NEW_CONTENT" | sed 's/[#\/&]/\\&/g')
-    
           sed -i "#<!-- BEGIN LATEST REPO SECTION -->#,#<!-- END LATEST REPO SECTION -->#c\<!-- BEGIN LATEST REPO SECTION -->\n$ESCAPED_CONTENT\n<!-- END LATEST REPO SECTION -->" README.md
       - name: Commit changes
         if: steps.check_visibility.outputs.visibility == 'public'
