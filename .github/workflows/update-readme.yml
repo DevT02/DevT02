@@ -51,43 +51,38 @@ jobs:
           LANGUAGES_JSON=$(curl -s "https://api.github.com/repos/DevT02/$REPO_NAME/languages")
           TECH_STACK_HTML="<p>"
           for lang in $(echo "$LANGUAGES_JSON" | jq -r 'keys[]'); do
-            # Convert language name to lowercase (adjust if needed)
             lang_lower=$(echo "$lang" | tr '[:upper:]' '[:lower:]')
             TECH_STACK_HTML+="<span><img src=\"https://skillicons.dev/icons?i=${lang_lower}\" alt=\"${lang}\"></span> "
           done
           TECH_STACK_HTML+="</p>"
           
-          echo "Latest Repo Name: $REPO_NAME"
-          echo "Latest Repo URL: $REPO_URL"
-          echo "Latest Repo Description: $REPO_DESCRIPTION"
-          echo "Tech Stack HTML: $TECH_STACK_HTML"
-          
           echo "repo_name=$REPO_NAME" >> $GITHUB_OUTPUT
           echo "repo_url=$REPO_URL" >> $GITHUB_OUTPUT
           echo "repo_description=$REPO_DESCRIPTION" >> $GITHUB_OUTPUT
           echo "tech_stack_html=$TECH_STACK_HTML" >> $GITHUB_OUTPUT
-    
+
       - name: Update README section
         if: steps.check_visibility.outputs.visibility == 'public'
         run: |
-          # Use a here-document with proper quoting and escaping
-          NEW_CONTENT=$(cat << 'EOF'
-          <td align="center" width="33%">
-            <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
-            <div align="center">
-              <h4>
-                <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-                <a href="${{ steps.get_latest.outputs.repo_url }}">${{ steps.get_latest.outputs.repo_name }}</a>
-              </h4>
-              <p>${{ steps.get_latest.outputs.repo_description }}</p>
-              ${{ steps.get_latest.outputs.tech_stack_html }}
-            </div>
-          </td>
-          EOF
+          NEW_CONTENT=$(cat <<EOF
+            <td align="center" width="33%">
+              <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
+              <div align="center">
+                <h4>
+                  <img src="https://skillicons.dev/icons?i=ts" height="25"/>
+                  <a href="${{ steps.get_latest.outputs.repo_url }}">${{ steps.get_latest.outputs.repo_name }}</a>
+                </h4>
+                <p>${{ steps.get_latest.outputs.repo_description }}</p>
+                ${{ steps.get_latest.outputs.tech_stack_html }}
+              </div>
+            </td>
+            EOF
           )
-          
-          # Replace the block between the markers with the new content
-          sed -i "/<!-- BEGIN LATEST REPO SECTION -->/,/<!-- END LATEST REPO SECTION -->/c\<!-- BEGIN LATEST REPO SECTION -->\n$NEW_CONTENT\n<!-- END LATEST REPO SECTION -->" README.md
+          # Use # as delimiter so that / or < characters in the HTML don't confuse sed.
+          sed -i "\#<!-- BEGIN LATEST REPO SECTION -->#,\#<!-- END LATEST REPO SECTION -->#c\\
+          <!-- BEGIN LATEST REPO SECTION -->\\
+          $NEW_CONTENT\\
+          <!-- END LATEST REPO SECTION -->" README.md
 
       - name: Commit changes
         if: steps.check_visibility.outputs.visibility == 'public'
