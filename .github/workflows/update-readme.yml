@@ -64,25 +64,23 @@ jobs:
       - name: Update README section
         if: steps.check_visibility.outputs.visibility == 'public'
         run: |
-          NEW_CONTENT=$(cat <<EOF
-            <td align="center" width="33%">
-              <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
-              <div align="center">
-                <h4>
-                  <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-                  <a href="${{ steps.get_latest.outputs.repo_url }}">${{ steps.get_latest.outputs.repo_name }}</a>
-                </h4>
-                <p>${{ steps.get_latest.outputs.repo_description }}</p>
-                ${{ steps.get_latest.outputs.tech_stack_html }}
-              </div>
-            </td>
-            EOF
+          NEW_CONTENT=$(cat <<-EOF
+          <td align="center" width="33%">
+            <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
+            <div align="center">
+              <h4>
+                <img src="https://skillicons.dev/icons?i=ts" height="25"/>
+                <a href="${{ steps.get_latest.outputs.repo_url }}">${{ steps.get_latest.outputs.repo_name }}</a>
+              </h4>
+              <p>${{ steps.get_latest.outputs.repo_description }}</p>
+              ${{ steps.get_latest.outputs.tech_stack_html }}
+            </div>
+          </td>
+          EOF
           )
-          # Use # as delimiter so that / or < characters in the HTML don't confuse sed.
-          sed -i "\#<!-- BEGIN LATEST REPO SECTION -->#,\#<!-- END LATEST REPO SECTION -->#c\\
-          <!-- BEGIN LATEST REPO SECTION -->\\
-          $NEW_CONTENT\\
-          <!-- END LATEST REPO SECTION -->" README.md
+          
+          # Use # as delimiter so that / or < characters in the HTML don't confuse sed
+          sed -i "\#<!-- BEGIN LATEST REPO SECTION -->#,\#<!-- END LATEST REPO SECTION -->#c\<!-- BEGIN LATEST REPO SECTION -->\n$NEW_CONTENT\n<!-- END LATEST REPO SECTION -->" README.md
 
       - name: Commit changes
         if: steps.check_visibility.outputs.visibility == 'public'
