@@ -71,9 +71,9 @@
       <div align="center">
         <h4>
           <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-          <a href="https://github.com/DevT02/qUALMS-website">qUALMS-website</a>
+          <a href="REPLACE-WITH-LATEST-REPO-URL">REPLACE-WITH-LATEST-REPO-NAME</a>
         </h4>
-        <p>Modern, responsive website for the MSU linguistics club built with React, Next.js, and TypeScript.</p>
+        <p>REPLACE-WITH-LATEST-REPO-DESCRIPTION</p>
         <p>
           <span><img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React"></span>
           <span><img src="https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js&logoColor=white" alt="Next.js"></span>
