@@ -22,17 +22,48 @@ jobs:
         run: |
           REPO_VISIBILITY=$(curl -s "https://api.github.com/repos/${{ github.repository }}" | jq -r '.visibility')
           echo "Repository visibility: $REPO_VISIBILITY"
+          echo "visibility=$REPO_VISIBILITY" >> $GITHUB_OUTPUT
           if [ "$REPO_VISIBILITY" != "public" ]; then
             echo "Repository is not public. Exiting."
             exit 0
           fi
 
-      - name: Get latest repo
+      - name: Get latest repository info
+        id: get_latest
+        run: |
+          # Fetch the most recently updated public repo from your account
+          LATEST_JSON=$(curl -s "https://api.github.com/users/DevT02/repos?sort=updated&per_page=1")
+          REPO_NAME=$(echo "$LATEST_JSON" | jq -r '.[0].name')
+          REPO_URL=$(echo "$LATEST_JSON" | jq -r '.[0].html_url')
+          REPO_DESCRIPTION=$(echo "$LATEST_JSON" | jq -r '.[0].description')
+          
+          # If no description is provided, try to generate one using the languages used
+          if [ "$REPO_DESCRIPTION" = "null" ] || [ -z "$REPO_DESCRIPTION" ]; then
+            LANGUAGES=$(curl -s "https://api.github.com/repos/DevT02/$REPO_NAME/languages" | jq -r 'keys | join(", ")')
+            if [ -z "$LANGUAGES" ]; then
+              REPO_DESCRIPTION="A recent project by Devansh."
+            else
+              REPO_DESCRIPTION="A recent project built using: $LANGUAGES."
+            fi
+          fi
+
+          echo "Latest Repo Name: $REPO_NAME"
+          echo "Latest Repo URL: $REPO_URL"
+          echo "Latest Repo Description: $REPO_DESCRIPTION"
+
+          echo "repo_name=$REPO_NAME" >> $GITHUB_OUTPUT
+          echo "repo_url=$REPO_URL" >> $GITHUB_OUTPUT
+          echo "repo_description=$REPO_DESCRIPTION" >> $GITHUB_OUTPUT
+
+      - name: Update README
         if: steps.check_visibility.outputs.visibility == 'public'
         run: |
-          LATEST_REPO=$(curl -s "https://api.github.com/users/DevT02/repos?sort=updated&per_page=1" | jq -r '.[0] | select(.name != null) | .name')
-          echo "Latest repo: $LATEST_REPO"
-          sed -i "s|REPLACE-WITH-YOUR-LATEST-REPO|$LATEST_REPO|g" README.md
+          # Replace placeholders in README.md with the latest repo data.
+          # Make sure your README has the following placeholders:
+          # REPLACE-WITH-LATEST-REPO-NAME, REPLACE-WITH-LATEST-REPO-URL, REPLACE-WITH-LATEST-REPO-DESCRIPTION
+          sed -i "s|REPLACE-WITH-LATEST-REPO-NAME|${{ steps.get_latest.outputs.repo_name }}|g" README.md
+          sed -i "s|REPLACE-WITH-LATEST-REPO-URL|${{ steps.get_latest.outputs.repo_url }}|g" README.md
+          sed -i "s|REPLACE-WITH-LATEST-REPO-DESCRIPTION|${{ steps.get_latest.outputs.repo_description }}|g" README.md
 
       - name: Commit changes
         if: steps.check_visibility.outputs.visibility == 'public'
@@ -40,5 +71,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "Updated README with latest repository" || echo "No changes to commit"
+          git commit -m "Updated README with latest repository details" || echo "No changes to commit"
           git push origin main
