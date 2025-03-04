@@ -79,12 +79,13 @@ jobs:
           EOF
           )
           
-          # Escape any characters that might conflict with the chosen delimiter (#)
-          ESCAPED_CONTENT=$(printf '%s' "$NEW_CONTENT" | sed 's/[#\/&]/\\&/g')
-          # The sed command below replaces everything between the markers
-          sed -i "\#<!-- BEGIN LATEST REPO SECTION -->#,\#<!-- END LATEST REPO SECTION -->#c\
-          <!-- BEGIN LATEST REPO SECTION -->\
-          $ESCAPED_CONTENT\
+          # Escape special characters and add line continuation backslashes
+          ESCAPED_CONTENT=$(printf '%s' "$NEW_CONTENT" | sed -e 's/[#\/&]/\\&/g' -e '$!s/$/\\/')
+          
+          # Update README section using sed
+          sed -i "\#<!-- BEGIN LATEST REPO SECTION -->#,\#<!-- END LATEST REPO SECTION -->#c\\
+          <!-- BEGIN LATEST REPO SECTION -->\\
+          $ESCAPED_CONTENT\\
           <!-- END LATEST REPO SECTION -->" README.md
           
       - name: Commit changes
