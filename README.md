@@ -68,7 +68,7 @@
     </td>
 <!-- BEGIN LATEST REPO SECTION -->
 <td align="center" width="33%">
- <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
+ <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent (Public)</h3>
   <div align="center">
    <h4>
     <img src="https://skillicons.dev/icons?i=ts" height="25"/>
