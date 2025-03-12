@@ -72,10 +72,10 @@
   <div align="center">
    <h4>
     <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-    <a href="https://github.com/DevT02/DevT02">DevT02</a>
+    <a href="https://github.com/DevT02/qUALMS-website">qUALMS-website</a>
    </h4>
-   <p>A recent project by Devansh.</p>
-   <p></p>
+   <p>For the MSU linguistics club</p>
+   <p><span><img src="https://skillicons.dev/icons?i=css" alt="CSS"></span> <span><img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript"></span> <span><img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript"></span> </p>
   </div>
 </td>
 <!-- END LATEST REPO SECTION -->
