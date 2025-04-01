@@ -94,6 +94,9 @@
 <a href="https://discord.com/users/619720540328034304" target="_blank">
 <img src="https://skillicons.dev/icons?i=discord" alt="Discord" />
 </a>
+<a href="mailto:devanshtayal7@gmail.com">
+  <img src="https://skillicons.dev/icons?i=gmail" alt="Email" />
+</a>
 </div>
 
 ---
