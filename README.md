@@ -72,10 +72,10 @@
   <div align="center">
    <h4>
     <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-    <a href="https://github.com/DevT02/qUALMS-website">qUALMS-website</a>
+    <a href="https://github.com/DevT02/peftbackdoor-retry">peftbackdoor-retry</a>
    </h4>
-   <p>For the MSU linguistics club, deployed @ qUALMSmsu.com </p>
-   <p><span><img src="https://skillicons.dev/icons?i=css" alt="CSS"></span> <span><img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript"></span> <span><img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript"></span> </p>
+   <p> Modified version of LoRA demonstrating the effectiveness of backdoors in PEFT (Parameter-Efficient Fine-Tuning) </p>
+   <p><span><img src="https://skillicons.dev/icons?i=python" alt="Python"></span> </p>
   </div>
 </td>
 <!-- END LATEST REPO SECTION -->
