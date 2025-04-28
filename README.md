@@ -72,10 +72,10 @@
   <div align="center">
    <h4>
     <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-    <a href="https://github.com/DevT02/peftbackdoor-retry">peftbackdoor-retry</a>
+    <a href="https://github.com/DevT02/DevT02">DevT02</a>
    </h4>
-   <p> Modified version of LoRA demonstrating the effectiveness of backdoors in PEFT (Parameter-Efficient Fine-Tuning) </p>
-   <p><span><img src="https://skillicons.dev/icons?i=python" alt="Python"></span> </p>
+   <p>small blurb on me, updated daily through github actions dependabot and some careful planning ^</p>
+   <p></p>
   </div>
 </td>
 <!-- END LATEST REPO SECTION -->
