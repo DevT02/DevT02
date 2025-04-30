@@ -61,6 +61,17 @@ Building cool things, solving problems, and always learning. I work with AI, ful
         </p>
       </div>
     </td>
+    <td width="33%" align="center">
+      <h3>💖 Favorite Project</h3>
+      <a href="https://github.com/DevT02/notelify">
+        <strong>Notelify</strong>
+      </a>
+      <p>Real-time note app using OpenAI Whisper & GPT-4o. Live at <a href="https://notelify.co">notelify.co</a></p>
+      <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
+      <img src="https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js&logoColor=white" />
+      <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
+      <img src="https://img.shields.io/badge/Vercel-black?style=flat-square&logo=vercel&logoColor=white" />
+    </td>
 <!-- BEGIN LATEST REPO SECTION -->
 <td align="center" width="33%">
  <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
