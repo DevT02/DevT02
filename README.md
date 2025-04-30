@@ -62,29 +62,19 @@ Building cool things, solving problems, and always learning. I work with AI, ful
         </p>
       </div>
     </td>
-    <!-- BEGIN LATEST REPO SECTION -->
-    <td width="33%" valign="top" align="center">
-      <h3 align="center">💖 Favorite Project</h3>
-      <div align="center">
-        <h4><a href="https://github.com/DevT02/notelify">notelify</a></h4>
-        <p>Smart note-taking via OpenAI Whisper & GPT-4o. Live at <a href="https://notelify.co" target="_blank">notelify.co</a>.</p>
-        <p>
-          <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
-          <img src="https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js&logoColor=white" />
-          <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
-          <img src="https://img.shields.io/badge/Vercel-black?style=flat-square&logo=vercel&logoColor=white" />
-        </p>
-      </div>
-    </td>
-    <td width="33%" valign="top" align="right">
-      <h3 align="center">🆕 Most Recent</h3>
-      <div align="center">
-        <h4><a href="https://github.com/DevT02/DevT02">DevT02</a></h4>
-        <p>Dynamic GitHub profile updated via GitHub Actions + Dependabot.</p>
-        <p>&nbsp;</p>
-      </div>
-    </td>
-    <!-- END LATEST REPO SECTION -->
+<!-- BEGIN LATEST REPO SECTION -->
+<td align="center" width="33%">
+ <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
+  <div align="center">
+   <h4>
+    <img src="https://skillicons.dev/icons?i=ts" height="25"/>
+    <a href="https://github.com/DevT02/DevT02">DevT02</a>
+   </h4>
+   <p>small blurb on me, updated daily through github actions dependabot and some careful planning ^</p>
+   <p></p>
+  </div>
+</td>
+<!-- END LATEST REPO SECTION -->
   </tr>
 </table>
 
