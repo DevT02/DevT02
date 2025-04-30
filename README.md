@@ -7,7 +7,6 @@ Building cool things, solving problems, and always learning. I work with AI, ful
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=DevT02&show_icons=true&theme=tokyonight&hide=contribs,prs" />
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DevT02&layout=compact&theme=tokyonight&langs_count=8&size_weight=0.5&count_weight=0.5" />
 </p>
 
