@@ -1,87 +1,94 @@
-<div align="center">
-<h1>👋 Hey, I'm Devansh!</h1>
-<p>Building cool things, solving problems, and always learning. I work with AI, full stack development, and other miscellaneous tech!</p>
-</div>
+# 👋 Hey, I'm Devansh!
+
+Building cool things, solving problems, and always learning. I work with AI, full stack development, and other miscellaneous tech!
 
 ---
 
-## 🚀 Most Used Technologies & Frameworks
-<div align="center" style="margin-bottom: 20px;">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DevT02&layout=compact&theme=tokyonight&bg_color=00000000&langs_count=10&hide_title=true" style="border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2)" />
-</div>
+## 📊 GitHub Stats
+
+<p align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=DevT02&show_icons=true&theme=tokyonight&hide=contribs,prs" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DevT02&layout=compact&theme=tokyonight&langs_count=8&size_weight=0.5&count_weight=0.5" />
+</p>
 
 ---
 
-<div align="center">
-<h2>🛠️ Tech Stack</h2>
-</div>
+## 🛠️ Tech Stack
 
-<table align="center" width="100%">
-<tr>
-<td align="center" width="50%"><h3>💻 Programming & AI</h3>
-<img src="https://skillicons.dev/icons?i=c,cpp,cs,python,java" /><br>
-<img src="https://skillicons.dev/icons?i=mysql,ts,js,php,tailwind,sass" /><br>
+### Programming Languages & Core Technologies
+![C](https://skillicons.dev/icons?i=c)
+![C++](https://skillicons.dev/icons?i=cpp)
+![C#](https://skillicons.dev/icons?i=cs)
+![Python](https://skillicons.dev/icons?i=python)
+![Java](https://skillicons.dev/icons?i=java)
+![JavaScript](https://skillicons.dev/icons?i=js)
+![TypeScript](https://skillicons.dev/icons?i=ts)
+![PHP](https://skillicons.dev/icons?i=php)
 
-<img src="https://skillicons.dev/icons?i=pytorch,tensorflow,opencv" />
-</td>
-<td align="center" width="50%"><h3>☁️ Frameworks & Cloud</h3>
-<img src="https://skillicons.dev/icons?i=dotnet,nextjs,react,flask,docker,gcp" />
-</td>
-</tr>
-</table>
+### Frameworks & Frontend
+![.NET](https://skillicons.dev/icons?i=dotnet)
+![React](https://skillicons.dev/icons?i=react)
+![Next.js](https://skillicons.dev/icons?i=nextjs)
+![Flask](https://skillicons.dev/icons?i=flask)
+![Tailwind CSS](https://skillicons.dev/icons?i=tailwind)
+![Sass](https://skillicons.dev/icons?i=sass)
 
+### AI/ML & Databases
+![PyTorch](https://skillicons.dev/icons?i=pytorch)
+![TensorFlow](https://skillicons.dev/icons?i=tensorflow)
+![OpenCV](https://skillicons.dev/icons?i=opencv)
+![MySQL](https://skillicons.dev/icons?i=mysql)
+
+### Cloud & Tools
+![Google Cloud](https://skillicons.dev/icons?i=gcp)
+![Docker](https://skillicons.dev/icons?i=docker)
+
+<sub><i>More on my tech stack can be found on my website.</i></sub>
 ---
 
 ## 🌟 Featured Projects
+
 <table>
   <tr>
-    <td align="center" width="33%">
-      <h3>⭐ Most Starred</h3>
+    <td width="33%" valign="top" align="left">
+      <h3 align="center">⭐ Most Starred</h3>
       <div align="center">
-        <h4>
-          <img src="https://skillicons.dev/icons?i=cs" width="25" height="25"/>
-          <a href="https://github.com/DevT02/Junk-Remover">Junk-Remover</a>
-        </h4>
-        <p>Powerful .NET attributes cleaner that efficiently removes unused attributes and junk from compiled/obfuscated assemblies.</p>
+        <h4><a href="https://github.com/DevT02/Junk-Remover">Junk-Remover</a></h4>
+        <p>.NET attribute cleaner for removing unused & obfuscated junk.</p>
         <p>
-          <span><img src="https://img.shields.io/badge/C%23-239120?style=flat-square&logo=c-sharp&logoColor=white" alt="C#"></span>
-          <span><img src="https://img.shields.io/badge/Stars-21-yellow?style=flat-square" alt="Stars"></span>
-          <span><img src="https://img.shields.io/badge/Forks-9-blueviolet?style=flat-square" alt="Forks"></span>
+          <img src="https://img.shields.io/github/languages/top/DevT02/Junk-Remover?style=flat-square" />
+          <img src="https://img.shields.io/github/stars/DevT02/Junk-Remover?style=flat-square&label=Stars&color=yellow" />
+          <img src="https://img.shields.io/github/forks/DevT02/Junk-Remover?style=flat-square&label=Forks&color=blueviolet" />
         </p>
       </div>
     </td>
-    <td align="center" width="33%">
-      <h3>💖 Favorite Project</h3>
+    <!-- BEGIN LATEST REPO SECTION -->
+    <td width="33%" valign="top" align="center">
+      <h3 align="center">💖 Favorite Project</h3>
       <div align="center">
-        <h4>
-          <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-          <a href="https://github.com/DevT02/notelify">notelify</a>
-        </h4>
-        <p>Smart note-taking app that creates notes through real-time transcription of lectures, meetings, and calls using OpenAI Whisper and GPT-4o. Deployed @ notelify.co</p>
+        <h4><a href="https://github.com/DevT02/notelify">notelify</a></h4>
+        <p>Smart note-taking via OpenAI Whisper & GPT-4o. Live at <a href="https://notelify.co" target="_blank">notelify.co</a>.</p>
         <p>
-          <span><img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React"></span>
-          <span><img src="https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js&logoColor=white" alt="Next.js"></span>
-          <span><img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" alt="Supabase"></span>
-          <span><img src="https://img.shields.io/badge/Vercel-black?style=flat-square&logo=vercel&logoColor=white" alt="Vercel"></span>
+          <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
+          <img src="https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js&logoColor=white" />
+          <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
+          <img src="https://img.shields.io/badge/Vercel-black?style=flat-square&logo=vercel&logoColor=white" />
         </p>
       </div>
     </td>
-<!-- BEGIN LATEST REPO SECTION -->
-<td align="center" width="33%">
- <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
-  <div align="center">
-   <h4>
-    <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-    <a href="https://github.com/DevT02/DevT02">DevT02</a>
-   </h4>
-   <p>small blurb on me, updated daily through github actions dependabot and some careful planning ^</p>
-   <p></p>
-  </div>
-</td>
-<!-- END LATEST REPO SECTION -->
+    <td width="33%" valign="top" align="right">
+      <h3 align="center">🆕 Most Recent</h3>
+      <div align="center">
+        <h4><a href="https://github.com/DevT02/DevT02">DevT02</a></h4>
+        <p>Dynamic GitHub profile updated via GitHub Actions + Dependabot.</p>
+        <p>&nbsp;</p>
+      </div>
+    </td>
+    <!-- END LATEST REPO SECTION -->
   </tr>
 </table>
-<div align="center">
+
+<div align="center" style="margin-top: 15px;">
   <a href="https://github.com/DevT02?tab=repositories">
     <img src="https://img.shields.io/badge/View_All_Projects-238636?style=for-the-badge&logo=github" alt="View All Projects">
   </a>
@@ -90,24 +97,28 @@
 ---
 
 ## 📡 Connect with Me
-<div align="center">
-<a href="https://discord.com/users/619720540328034304" target="_blank">
-<img src="https://skillicons.dev/icons?i=discord" alt="Discord" />
-</a>
-<a href="mailto:devanshtayal7@gmail.com">
-  <img src="https://skillicons.dev/icons?i=gmail" alt="Email" />
-</a>
-</div>
+
+Let's connect! You can find me here:
+
+<p align="center">
+  <a href="https://devanshtayal.com" target="_blank">
+    <img src="https://github.com/user-attachments/assets/72f911ae-1c0c-48b7-9520-fdb766079f96" alt="Website" width="45" height="45" style="margin: 0 8px;" />
+  </a>
+  <a href="https://discord.com/users/619720540328034304" target="_blank">
+    <img src="https://skillicons.dev/icons?i=discord" alt="Discord" style="margin: 0 6px;" />
+  </a>
+  <a href="mailto:devanshtayal7@gmail.com">
+    <img src="https://skillicons.dev/icons?i=gmail" alt="Email" style="margin: 0 6px;" />
+  </a>
+</p>
 
 ---
 
-<div align="center" style="font-size: 1.2em; font-weight: bold;">
-🚀 Always open to new opportunities and collaborations!
-</div>
+<div align="center"><strong>🚀 Always open to new opportunities and collaborations!</strong></div>
 
 ---
 
 <details>
   <summary>🔍 Looking for some older projects?</summary>
-  Some of my work from 5+ years ago can still be found <a href="https://github.com/imnobodyxd">here</a>. 🕵️ (good job this was super hidden)
+  Some of my work from 5+ years ago can still be found <a href="https://github.com/imnobodyxd">here</a>. 🕵️
 </details>
