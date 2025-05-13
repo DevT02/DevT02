@@ -28,34 +28,33 @@ jobs:
             exit 0
           fi
 
-      - name: Get latest repository info
+      - name: Get latest repository info (excluding this one)
         id: get_latest
         run: |
-          # Fetch the most recently updated public repo from your account
-          LATEST_JSON=$(curl -s "https://api.github.com/users/DevT02/repos?sort=updated&per_page=1")
-          REPO_NAME=$(echo "$LATEST_JSON" | jq -r '.[0].name')
-          REPO_URL=$(echo "$LATEST_JSON" | jq -r '.[0].html_url')
-          REPO_DESCRIPTION=$(echo "$LATEST_JSON" | jq -r '.[0].description')
-          
-          # If no description is provided, generate one using the languages used
+          # the current repo name, e.g. "DevT02"
+          CUR_NAME="${GITHUB_REPOSITORY##*/}"
+          ALL_JSON=$(curl -s "https://api.github.com/users/DevT02/repos?sort=updated&per_page=5")
+
+          # pick the first one whose name != current repo
+          TARGET=$(echo "$ALL_JSON" | jq -r --arg cur "$CUR_NAME" \
+            '[.[] | select(.name != $cur)][0]')
+          REPO_NAME=$(echo "$TARGET" | jq -r '.name')
+          REPO_URL=$(echo "$TARGET" | jq -r '.html_url')
+          REPO_DESCRIPTION=$(echo "$TARGET" | jq -r '.description')
           if [ "$REPO_DESCRIPTION" = "null" ] || [ -z "$REPO_DESCRIPTION" ]; then
-            LANGUAGES=$(curl -s "https://api.github.com/repos/DevT02/$REPO_NAME/languages" | jq -r 'keys | join(", ")')
-            if [ -z "$LANGUAGES" ]; then
-              REPO_DESCRIPTION="A recent project by Devansh."
-            else
-              REPO_DESCRIPTION="A recent project built using: $LANGUAGES."
-            fi
+            LANGS=$(curl -s "https://api.github.com/repos/DevT02/$REPO_NAME/languages" \
+                    | jq -r 'keys | join(", ")')
+            REPO_DESCRIPTION="A recent project built using: ${LANGS:-miscellaneous technologies}."
           fi
           
-          # Generate tech stack HTML snippet based on languages used
-          LANGUAGES_JSON=$(curl -s "https://api.github.com/repos/DevT02/$REPO_NAME/languages")
+          # generate the icons snippet
+          LANGS_JSON=$(curl -s "https://api.github.com/repos/DevT02/$REPO_NAME/languages")
           TECH_STACK_HTML="<p>"
-          for lang in $(echo "$LANGUAGES_JSON" | jq -r 'keys[]'); do
-            lang_lower=$(echo "$lang" | tr '[:upper:]' '[:lower:]')
-            TECH_STACK_HTML+="<span><img src=\"https://skillicons.dev/icons?i=${lang_lower}\" alt=\"${lang}\"></span> "
+          for lang in $(echo "$LANGS_JSON" | jq -r 'keys[]'); do
+            l=$(echo "$lang" | tr '[:upper:]' '[:lower:]')
+            TECH_STACK_HTML+="<img src=\"https://skillicons.dev/icons?i=${l}\" alt=\"${lang}\"/> "
           done
           TECH_STACK_HTML+="</p>"
-          
           echo "repo_name=$REPO_NAME" >> $GITHUB_OUTPUT
           echo "repo_url=$REPO_URL" >> $GITHUB_OUTPUT
           echo "repo_description=$REPO_DESCRIPTION" >> $GITHUB_OUTPUT
