@@ -78,10 +78,10 @@ Building cool things, solving problems, and always learning. I work with AI, ful
   <div align="center">
    <h4>
     <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-    <a href="https://github.com/DevT02/qUALMS-website">qUALMS-website</a>
+    <a href="https://github.com/DevT02/DevT02">DevT02</a>
    </h4>
-   <p>For the MSU linguistics club, deployed @ qUALMSmsu.com </p>
-   <p><span><img src="https://skillicons.dev/icons?i=css" alt="CSS"></span> <span><img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript"></span> <span><img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript"></span> </p>
+   <p>small blurb on me, updated daily through github actions dependabot and some careful planning ^</p>
+   <p></p>
   </div>
 </td>
 <!-- END LATEST REPO SECTION -->
