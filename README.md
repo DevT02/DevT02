@@ -78,10 +78,10 @@ Building cool things, solving problems, and always learning. I work with AI, ful
   <div align="center">
    <h4>
     <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-    <a href="https://github.com/DevT02/qUALMS-website">qUALMS-website</a>
+    <a href="https://github.com/DevT02/NETObfuscation-exe-tester">NETObfuscation-exe-tester</a>
    </h4>
-   <p>For the MSU linguistics club, deployed @ qUALMSmsu.com </p>
-   <p><img src="https://skillicons.dev/icons?i=css" alt="CSS"/> <img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript"/> <img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript"/> </p>
+   <p>This is a simple exe file made for .NET obfuscation to ensure encryption and mutation of strings/ints/other types is correct. Special thanks to Bills for getting me into this kind of thing after you reversed my program, haha.</p>
+   <p><img src="https://skillicons.dev/icons?i=c#" alt="C#"/> </p>
   </div>
 </td>
 <!-- END LATEST REPO SECTION -->
