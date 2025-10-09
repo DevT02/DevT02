@@ -78,10 +78,10 @@ Building cool things, solving problems, and always learning. I work with AI, ful
   <div align="center">
    <h4>
     <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-    <a href="https://github.com/DevT02/qUALMS-website">qUALMS-website</a>
+    <a href="https://github.com/DevT02/CounuxeExploit-UI">CounuxeExploit-UI</a>
    </h4>
-   <p>For MSU's linguistics club, deployed @ qUALMSmsu.com </p>
-   <p><img src="https://skillicons.dev/icons?i=css" alt="CSS"/> <img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript"/> <img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript"/> </p>
+   <p>Simple roblox exploit made using the WeAreDevsAPI (roblox has terrible security, by far one of the worst out of all games).</p>
+   <p><img src="https://skillicons.dev/icons?i=c#" alt="C#"/> </p>
   </div>
 </td>
 <!-- END LATEST REPO SECTION -->
