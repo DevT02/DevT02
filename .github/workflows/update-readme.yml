@@ -33,7 +33,7 @@ jobs:
         run: |
           # the current repo name, e.g. "DevT02"
           CUR_NAME="${GITHUB_REPOSITORY##*/}"
-          ALL_JSON=$(curl -s "https://api.github.com/users/DevT02/repos?sort=updated&per_page=5")
+          ALL_JSON=$(curl -s "https://api.github.com/users/DevT02/repos?sort=updated&per_page=20")
 
           # pick the first one whose name != current repo
           TARGET=$(echo "$ALL_JSON" | jq -r --arg cur "$CUR_NAME" \
