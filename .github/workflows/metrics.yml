@@ -16,7 +16,7 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           user: DevT02
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
           template: classic
           config_timezone: America/Detroit
           base: header, activity, community, repositories, metadata
@@ -28,30 +28,22 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           user: DevT02
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
           template: classic
           base: ""
           plugin_languages: yes
-          plugin_languages_indepth: yes
-          plugin_languages_limit: 8
+          plugin_languages_limit: 10
           plugin_languages_details: bytes-size, percentage
-      
-          # 1) Remove tiny junk entries (like 0.3% JS)
-          plugin_languages_threshold: 2%
-      
-          # 2) Only show real “code” categories (cuts CSS/HTML/etc)
-          plugin_languages_categories: programming, data
-          plugin_languages_recent_categories: programming, data
-      
-          # 3) Hard-ignore stuff you never want listed (even if it sneaks in)
-          plugin_languages_ignored: >-
-            shell, powershell, batchfile, css, scss, html
-      
-          # 4) Fix mislabeled languages (TSX -> TypeScript)
-          plugin_languages_aliases: >-
-            tsx:TypeScript
-      
+
+          # Better “overall stack” view than indepth commit-based analysis
+          plugin_languages_indepth: no
+
+          # Ignore junk “languages”
+          plugin_languages_ignored: html,css,scss,shell,powershell,batchfile,svg
+
+          # Optional: unify TSX into TypeScript if it appears
+          plugin_languages_aliases: tsx:TypeScript
+
           output_action: commit
           output_branch: metrics
           filename: metrics.langs.svg
-
