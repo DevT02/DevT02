@@ -78,10 +78,10 @@ Building cool things, solving problems, and always learning. I work with AI, ful
   <div align="center">
    <h4>
     <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-    <a href="https://github.com/DevT02/pez-fgsm-robustness">pez-fgsm-robustness</a>
+    <a href="https://github.com/DevT02/ForgetGate">ForgetGate</a>
    </h4>
-   <p>FGSM adversarial robustness evaluation for PEZ prompt optimization with CLIP</p>
-   <p><img src="https://skillicons.dev/icons?i=python" alt="Python"/> </p>
+   <p>ForgetGate: Breaking Machine Unlearning with Visual Prompts</p>
+   <p><img src="https://skillicons.dev/icons?i=batchfile" alt="Batchfile"/> <img src="https://skillicons.dev/icons?i=python" alt="Python"/> </p>
   </div>
 </td>
 <!-- END LATEST REPO SECTION -->
