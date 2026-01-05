@@ -14,8 +14,8 @@
 </p>
 
 <p align="center">
-  <img height="165" src="https://raw.githubusercontent.com/DevT02/DevT02/metrics/metrics.svg" />
-  <img height="165" src="https://raw.githubusercontent.com/DevT02/DevT02/metrics/metrics.langs.svg" />
+  <img height="165" src="https://raw.githubusercontent.com/DevT02/DevT02/refs/heads/main/metrics.svg" />
+  <img height="165" src="https://raw.githubusercontent.com/DevT02/DevT02/refs/heads/main/metrics.langs.svg" />
 </p>
 
 ---
