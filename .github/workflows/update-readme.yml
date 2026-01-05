@@ -3,9 +3,9 @@ name: Update README with Latest Repo
 on:
   schedule:
     - cron: "0 0 * * *"
+  workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
 
 permissions:
   contents: write
@@ -15,83 +15,105 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Check if repository is public
-        id: check_visibility
-        run: |
-          REPO_VISIBILITY=$(curl -s "https://api.github.com/repos/${{ github.repository }}" | jq -r '.visibility')
-          echo "Repository visibility: $REPO_VISIBILITY"
-          echo "visibility=$REPO_VISIBILITY" >> $GITHUB_OUTPUT
-          if [ "$REPO_VISIBILITY" != "public" ]; then
-            echo "Repository is not public. Exiting."
-            exit 0
-          fi
+        uses: actions/checkout@v5
 
       - name: Get latest repository info (excluding this one)
         id: get_latest
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # the current repo name, e.g. "DevT02"
-          CUR_NAME="${GITHUB_REPOSITORY##*/}"
-          ALL_JSON=$(curl -s "https://api.github.com/users/DevT02/repos?sort=updated&per_page=20")
+          set -euo pipefail
 
-          # pick the first one whose name != current repo
+          CUR_NAME="${GITHUB_REPOSITORY##*/}"
+
+          ALL_JSON=$(curl -s \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/users/DevT02/repos?sort=updated&per_page=50")
+
           TARGET=$(echo "$ALL_JSON" | jq -r --arg cur "$CUR_NAME" \
-            '[.[] | select(.name != $cur)][0]')
+            '[.[] | select(.name != $cur and (.fork|not) and (.archived|not))][0]')
+
           REPO_NAME=$(echo "$TARGET" | jq -r '.name')
           REPO_URL=$(echo "$TARGET" | jq -r '.html_url')
-          REPO_DESCRIPTION=$(echo "$TARGET" | jq -r '.description')
-          if [ "$REPO_DESCRIPTION" = "null" ] || [ -z "$REPO_DESCRIPTION" ]; then
-            LANGS=$(curl -s "https://api.github.com/repos/DevT02/$REPO_NAME/languages" \
-                    | jq -r 'keys | join(", ")')
+          REPO_DESCRIPTION=$(echo "$TARGET" | jq -r '.description // empty')
+
+          if [ -z "$REPO_DESCRIPTION" ]; then
+            LANGS=$(curl -s \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/DevT02/$REPO_NAME/languages" \
+              | jq -r 'keys | join(", ")')
             REPO_DESCRIPTION="A recent project built using: ${LANGS:-miscellaneous technologies}."
           fi
-          
-          # generate the icons snippet
-          LANGS_JSON=$(curl -s "https://api.github.com/repos/DevT02/$REPO_NAME/languages")
+
+          LANGS_JSON=$(curl -s \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/DevT02/$REPO_NAME/languages")
+
           TECH_STACK_HTML="<p>"
           for lang in $(echo "$LANGS_JSON" | jq -r 'keys[]'); do
-            l=$(echo "$lang" | tr '[:upper:]' '[:lower:]')
-            TECH_STACK_HTML+="<img src=\"https://skillicons.dev/icons?i=${l}\" alt=\"${lang}\"/> "
+            case "$lang" in
+              "C++") icon="cpp" ;;
+              "C#") icon="cs" ;;
+              "JavaScript") icon="js" ;;
+              "TypeScript") icon="ts" ;;
+              "Jupyter Notebook") icon="python" ;;
+              *) icon=$(echo "$lang" | tr '[:upper:]' '[:lower:]') ;;
+            esac
+            TECH_STACK_HTML+="<img src=\"https://skillicons.dev/icons?i=${icon}\" alt=\"${lang}\"/> "
           done
           TECH_STACK_HTML+="</p>"
-          echo "repo_name=$REPO_NAME" >> $GITHUB_OUTPUT
-          echo "repo_url=$REPO_URL" >> $GITHUB_OUTPUT
-          echo "repo_description=$REPO_DESCRIPTION" >> $GITHUB_OUTPUT
-          echo "tech_stack_html=$TECH_STACK_HTML" >> $GITHUB_OUTPUT
 
-      - name: Update README section
-        if: steps.check_visibility.outputs.visibility == 'public'
+          echo "repo_name=$REPO_NAME" >> "$GITHUB_OUTPUT"
+          echo "repo_url=$REPO_URL" >> "$GITHUB_OUTPUT"
+          echo "repo_description<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$REPO_DESCRIPTION" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          echo "tech_stack_html<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$TECH_STACK_HTML" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Update README latest repo section (safe spacing)
+        env:
+          REPO_NAME: ${{ steps.get_latest.outputs.repo_name }}
+          REPO_URL: ${{ steps.get_latest.outputs.repo_url }}
+          REPO_DESCRIPTION: ${{ steps.get_latest.outputs.repo_description }}
+          TECH_STACK_HTML: ${{ steps.get_latest.outputs.tech_stack_html }}
         run: |
-          NEW_CONTENT=$(cat <<EOF
-          <td align="center" width="33%">
-           <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
-            <div align="center">
-             <h4>
-              <img src="https://skillicons.dev/icons?i=ts" height="25"/>
-              <a href="${{ steps.get_latest.outputs.repo_url }}">${{ steps.get_latest.outputs.repo_name }}</a>
-             </h4>
-             <p>${{ steps.get_latest.outputs.repo_description }}</p>
-             ${{ steps.get_latest.outputs.tech_stack_html }}
-            </div>
-          </td>
-          EOF
-          )
-          
-          # Escape special characters and add line continuation backslashes
-          ESCAPED_CONTENT=$(printf '%s' "$NEW_CONTENT" | sed -e 's/[#\/&]/\\&/g' -e '$!s/$/\\/')
-          
-          # Update README section using sed
-          sed -i "\#<!-- BEGIN LATEST REPO SECTION -->#,\#<!-- END LATEST REPO SECTION -->#c\\
-          <!-- BEGIN LATEST REPO SECTION -->\\
-          $ESCAPED_CONTENT\\
-          <!-- END LATEST REPO SECTION -->" README.md
-          
+          set -euo pipefail
+
+          python - <<'PY'
+import os, re, pathlib
+
+readme_path = pathlib.Path("README.md")
+text = readme_path.read_text(encoding="utf-8")
+
+new_td = (
+f"""<td width="33%" valign="top" align="center">
+  <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
+  <a href="{os.environ['REPO_URL']}"><b>{os.environ['REPO_NAME']}</b></a>
+  <p>{os.environ['REPO_DESCRIPTION']}</p>
+  {os.environ['TECH_STACK_HTML']}
+</td>"""
+).strip()
+
+pattern = r"<!-- BEGIN LATEST REPO SECTION -->.*?<!-- END LATEST REPO SECTION -->"
+replacement = "<!-- BEGIN LATEST REPO SECTION -->\n" + new_td + "\n<!-- END LATEST REPO SECTION -->"
+
+updated, n = re.subn(pattern, replacement, text, flags=re.S)
+if n != 1:
+  raise SystemExit(f"Expected 1 latest repo section, found {n}.")
+
+readme_path.write_text(updated, encoding="utf-8")
+PY
+
       - name: Commit changes
-        if: steps.check_visibility.outputs.visibility == 'public'
         run: |
+          set -euo pipefail
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "Updated README with latest repository details and tech stack [skip ci]" || echo "No changes to commit"
-          git push origin main
+          git commit -m "Update latest repo section [skip ci]" || echo "No changes to commit"
+          git push
