@@ -13,12 +13,18 @@
   <a href="https://github.com/DevT02?tab=repositories" target="_blank">Repos</a>
 </p>
 
-<table align="center">
+<table align="center" style="width:100%;">
   <tr>
-    <img height="165" src="https://raw.githubusercontent.com/DevT02/DevT02/refs/heads/main/metrics.svg" />
-    <img height="165" src="https://raw.githubusercontent.com/DevT02/DevT02/refs/heads/main/metrics.langs.svg" />
+    <td width="50%" align="center">
+      <img height="300" src="https://raw.githubusercontent.com/DevT02/DevT02/refs/heads/main/metrics.svg" />
+    </td>
+    <td width="50%" align="center">
+      <img height="300" src="https://raw.githubusercontent.com/DevT02/DevT02/refs/heads/main/metrics.langs.svg" />
+    </td>
   </tr>
 </table>
+
+
 
 ---
 
