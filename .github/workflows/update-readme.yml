@@ -68,9 +68,11 @@ jobs:
 
           echo "repo_name=$REPO_NAME" >> "$GITHUB_OUTPUT"
           echo "repo_url=$REPO_URL" >> "$GITHUB_OUTPUT"
+
           echo "repo_description<<EOF" >> "$GITHUB_OUTPUT"
           echo "$REPO_DESCRIPTION" >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
+
           echo "tech_stack_html<<EOF" >> "$GITHUB_OUTPUT"
           echo "$TECH_STACK_HTML" >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
@@ -85,29 +87,29 @@ jobs:
           set -euo pipefail
 
           python - <<'PY'
-import os, re, pathlib
+          import os, re, pathlib
 
-readme_path = pathlib.Path("README.md")
-text = readme_path.read_text(encoding="utf-8")
+          readme_path = pathlib.Path("README.md")
+          text = readme_path.read_text(encoding="utf-8")
 
-new_td = (
-f"""<td width="33%" valign="top" align="center">
-  <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
-  <a href="{os.environ['REPO_URL']}"><b>{os.environ['REPO_NAME']}</b></a>
-  <p>{os.environ['REPO_DESCRIPTION']}</p>
-  {os.environ['TECH_STACK_HTML']}
-</td>"""
-).strip()
+          new_td = (
+          f"""<td width="33%" valign="top" align="center">
+            <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
+            <a href="{os.environ['REPO_URL']}"><b>{os.environ['REPO_NAME']}</b></a>
+            <p>{os.environ['REPO_DESCRIPTION']}</p>
+            {os.environ['TECH_STACK_HTML']}
+          </td>"""
+          ).strip()
 
-pattern = r"<!-- BEGIN LATEST REPO SECTION -->.*?<!-- END LATEST REPO SECTION -->"
-replacement = "<!-- BEGIN LATEST REPO SECTION -->\n" + new_td + "\n<!-- END LATEST REPO SECTION -->"
+          pattern = r"<!-- BEGIN LATEST REPO SECTION -->.*?<!-- END LATEST REPO SECTION -->"
+          replacement = "<!-- BEGIN LATEST REPO SECTION -->\n" + new_td + "\n<!-- END LATEST REPO SECTION -->"
 
-updated, n = re.subn(pattern, replacement, text, flags=re.S)
-if n != 1:
-  raise SystemExit(f"Expected 1 latest repo section, found {n}.")
+          updated, n = re.subn(pattern, replacement, text, flags=re.S)
+          if n != 1:
+            raise SystemExit(f"Expected 1 latest repo section, found {n}.")
 
-readme_path.write_text(updated, encoding="utf-8")
-PY
+          readme_path.write_text(updated, encoding="utf-8")
+          PY
 
       - name: Commit changes
         run: |
