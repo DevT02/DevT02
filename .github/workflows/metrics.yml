@@ -31,7 +31,7 @@ jobs:
           plugin_calendar: no
 
           output_action: commit
-          committer_branch: metrics
+          committer_branch: main
           filename: metrics.svg
 
       # Languages card (focused on current repos)
@@ -51,5 +51,5 @@ jobs:
           
           plugin_languages_limit: 8
           output_action: commit
-          committer_branch: metrics
+          committer_branch: main
           filename: metrics.langs.svg
