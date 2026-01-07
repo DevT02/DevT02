@@ -118,12 +118,14 @@ If you’re looking for something specific, “Repos” is the best place to bro
 ## Connect
 
 <p align="center">
-  <a href="https://devanshtayal.com" target="_blank"><img src="https://skillicons.dev/icons?i=chrome" alt="Website" height="50" /></a>&nbsp;&nbsp;
+  <a href="https://devanshtayal.com" target="_blank"><img src="https://www.devanshtayal.com/favicon-bold-sleek.svg" alt="Website" width="50" height="50" /></a>&nbsp;&nbsp;
   <a href="https://linkedin.com/in/devansh-tayal" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" height="50" /></a>&nbsp;&nbsp;
   <a href="https://discord.com/users/619720540328034304" target="_blank"><img src="https://skillicons.dev/icons?i=discord" alt="Discord" height="50" /></a>&nbsp;&nbsp;
   <a href="mailto:devanshtayal7@gmail.com"><img src="https://skillicons.dev/icons?i=gmail" alt="Email" height="50" /></a>&nbsp;&nbsp;
   <a href="https://github.com/DevT02" target="_blank"><img src="https://skillicons.dev/icons?i=github" alt="GitHub" height="50" /></a>
 </p>
+
+
 
 
 <details>
