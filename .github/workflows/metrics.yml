@@ -27,7 +27,7 @@ jobs:
           config_timezone: America/Detroit
 
           # Remove "activity" to stop the big commits/contrib summary
-          base: header, metadata
+          base: header, community, metadata
           plugin_calendar: no
 
           output_action: commit
@@ -47,7 +47,7 @@ jobs:
           plugin_languages_indepth: yes
           plugin_languages_indepth_custom: DevT02/notelify,DevT02/ForgetGate,DevT02/Junk-Remover
           
-          plugin_languages_ignored: html, css, svg 
+          plugin_languages_ignored: html, css, svg, shell, powershell, batchfile, batch
           
           plugin_languages_limit: 8
           output_action: commit
