@@ -22,20 +22,20 @@ jobs:
         with:
           user: DevT02
           token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
-
+      
           template: classic
           config_timezone: America/Detroit
-
-          # Remove "repositories" to avoid the confusing "1 Repository" block
+      
           base: header, activity, community, metadata
-
-          # A few nice extras for a profile
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year
-
+      
+          # Multi-year commit history
+          plugin_calendar: yes
+          plugin_calendar_limit: 10   # or 0 for full history
+      
           output_action: commit
           output_branch: metrics
           filename: metrics.svg
+
 
       # Languages card
       - name: Generate metrics.langs.svg
