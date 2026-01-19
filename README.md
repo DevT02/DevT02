@@ -88,9 +88,9 @@
 <!-- BEGIN LATEST REPO SECTION -->
 <td width="33%" valign="top" align="center">
   <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
-  <a href="https://github.com/DevT02/ForgetGate"><b>ForgetGate</b></a>
-  <p>ForgetGate: Breaking Machine Unlearning with Visual Prompts</p>
-  <p><img src="https://skillicons.dev/icons?i=batchfile" alt="Batchfile"/> <img src="https://skillicons.dev/icons?i=python" alt="Python"/> </p>
+  <a href="https://github.com/DevT02/qUALMS-website"><b>qUALMS-website</b></a>
+  <p>For MSU's linguistics club, deployed @ qUALMSmsu.com </p>
+  <p><img src="https://skillicons.dev/icons?i=css" alt="CSS"/> <img src="https://skillicons.dev/icons?i=js" alt="JavaScript"/> <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript"/> </p>
 </td>
 <!-- END LATEST REPO SECTION -->
 </tr>
