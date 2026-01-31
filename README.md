@@ -89,7 +89,7 @@
 <td width="33%" valign="top" align="center">
   <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
   <a href="https://github.com/DevT02/ForgetGate"><b>ForgetGate</b></a>
-  <p>ForgetGate: Breaking Machine Unlearning with Visual Prompts</p>
+  <p>ForgetGate: Visual Prompt Attacks on Unlearning</p>
   <p><img src="https://skillicons.dev/icons?i=python" alt="Python"/> </p>
 </td>
 <!-- END LATEST REPO SECTION -->
