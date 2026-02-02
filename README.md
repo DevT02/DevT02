@@ -88,9 +88,9 @@
 <!-- BEGIN LATEST REPO SECTION -->
 <td width="33%" valign="top" align="center">
   <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
-  <a href="https://github.com/DevT02/ForgetGate"><b>ForgetGate</b></a>
-  <p>ForgetGate: Visual Prompt Attacks on Unlearning</p>
-  <p><img src="https://skillicons.dev/icons?i=python" alt="Python"/> </p>
+  <a href="https://github.com/DevT02/D2LPlus"><b>D2LPlus</b></a>
+  <p>🏆 (hackathon winner). Preview extension for campus links + Calendar integrated into homepage + MUCH MORE https://devpost.com/software/d2l</p>
+  <p><img src="https://skillicons.dev/icons?i=css" alt="CSS"/> <img src="https://skillicons.dev/icons?i=html" alt="HTML"/> <img src="https://skillicons.dev/icons?i=js" alt="JavaScript"/> <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript"/> </p>
 </td>
 <!-- END LATEST REPO SECTION -->
 </tr>
