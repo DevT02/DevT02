@@ -88,9 +88,9 @@
 <!-- BEGIN LATEST REPO SECTION -->
 <td width="33%" valign="top" align="center">
   <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
-  <a href="https://github.com/DevT02/qUALMS-website"><b>qUALMS-website</b></a>
-  <p>For MSU's linguistics club, deployed @ qUALMSmsu.com </p>
-  <p><img src="https://skillicons.dev/icons?i=css" alt="CSS"/> <img src="https://skillicons.dev/icons?i=js" alt="JavaScript"/> <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript"/> </p>
+  <a href="https://github.com/DevT02/pathfinder-symexec"><b>pathfinder-symexec</b></a>
+  <p>Symbolic execution survey and worked example with KLEE and angr</p>
+  <p><img src="https://skillicons.dev/icons?i=batchfile" alt="Batchfile"/> <img src="https://skillicons.dev/icons?i=c" alt="C"/> <img src="https://skillicons.dev/icons?i=cmake" alt="CMake"/> <img src="https://skillicons.dev/icons?i=makefile" alt="Makefile"/> <img src="https://skillicons.dev/icons?i=powershell" alt="PowerShell"/> <img src="https://skillicons.dev/icons?i=python" alt="Python"/> <img src="https://skillicons.dev/icons?i=shell" alt="Shell"/> <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript"/> </p>
 </td>
 <!-- END LATEST REPO SECTION -->
 </tr>
