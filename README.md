@@ -1,7 +1,7 @@
 <h1 align="center">Devansh Tayal</h1>
 
 <p align="center">
-  CS @ Michigan State (Honors) • Full-stack + ML systems<br/>
+  MS in CS @ Columbia • Full-stack + ML systems<br/>
   I build fast, practical software - from UI to infra - and I care about performance + clean engineering.
 </p>
 
@@ -111,19 +111,41 @@ Most of my work sits at the intersection of:
 - deploying **ML-heavy services without them being slow/expensive**
 - exploring **robustness/security** when models meet the real world
 
-If you’re looking for something specific, “Repos” is the best place to browse.
+If you're looking for something specific, "Repos" is the best place to browse.
 
 ---
 
 ## Connect
 
-<p align="center">
-  <a href="https://devanshtayal.com" target="_blank"><img src="https://www.devanshtayal.com/favicon-bold-sleek.svg" alt="Website" width="50" height="50" /></a>&nbsp;&nbsp;
-  <a href="https://linkedin.com/in/devansh-tayal" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" height="50" /></a>&nbsp;&nbsp;
-  <a href="https://discord.com/users/619720540328034304" target="_blank"><img src="https://skillicons.dev/icons?i=discord" alt="Discord" height="50" /></a>&nbsp;&nbsp;
-  <a href="mailto:devanshtayal7@gmail.com"><img src="https://skillicons.dev/icons?i=gmail" alt="Email" height="50" /></a>&nbsp;&nbsp;
-  <a href="https://github.com/DevT02" target="_blank"><img src="https://skillicons.dev/icons?i=github" alt="GitHub" height="50" /></a>
-</p>
+<table align="center">
+  <tr>
+    <td align="center" width="90" valign="middle">
+      <a href="https://devanshtayal.com" target="_blank" title="Website">
+        <img src="https://www.devanshtayal.com/favicon-bold-sleek.svg?v=2" alt="Website" width="44" height="44" style="vertical-align: middle;" />
+      </a>
+    </td>
+    <td align="center" width="90" valign="middle">
+      <a href="https://linkedin.com/in/devansh-tayal" target="_blank" title="LinkedIn">
+        <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" height="44" style="vertical-align: middle;" />
+      </a>
+    </td>
+    <td align="center" width="90" valign="middle">
+      <a href="https://discord.com/users/619720540328034304" target="_blank" title="@off_line">
+        <img src="https://skillicons.dev/icons?i=discord" alt="@off_line on Discord" height="44" style="vertical-align: middle;" />
+      </a>
+    </td>
+    <td align="center" width="90" valign="middle">
+      <a href="mailto:devanshtayal7@gmail.com" title="Email">
+        <img src="https://skillicons.dev/icons?i=gmail" alt="Email" height="44" style="vertical-align: middle;" />
+      </a>
+    </td>
+    <td align="center" width="90" valign="middle">
+      <a href="https://github.com/DevT02" target="_blank" title="GitHub">
+        <img src="https://skillicons.dev/icons?i=github" alt="GitHub" height="44" style="vertical-align: middle;" />
+      </a>
+    </td>
+  </tr>
+</table>
 
 
 
