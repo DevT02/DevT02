@@ -9,7 +9,7 @@
   <a href="https://devanshtayal.com" target="_blank">Website</a> •
   <a href="mailto:devanshtayal7@gmail.com">Email</a> •
   <a href="https://linkedin.com/in/devansh-tayal" target="_blank">LinkedIn</a> •
-  <a href="https://discord.com/users/619720540328034304" target="_blank">Discord</a> •
+  <a href="https://discord.com/users/619720540328034304" target="_blank">Discord: @off_line</a> •
   <a href="https://github.com/DevT02?tab=repositories" target="_blank">Repos</a>
 </p>
 
