@@ -88,9 +88,9 @@
 <!-- BEGIN LATEST REPO SECTION -->
 <td width="33%" valign="top" align="center">
   <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
-  <a href="https://github.com/DevT02/cse476"><b>cse476</b></a>
-  <p>"StudyLink" - for 476 (FS24)</p>
-  <p><img src="https://skillicons.dev/icons?i=java" alt="Java"/> </p>
+  <a href="https://github.com/DevT02/centaur"><b>centaur</b></a>
+  <p>Use browser-based AI coding assistants with your local repository without giving them shell access.</p>
+  <p><img src="https://skillicons.dev/icons?i=js" alt="JavaScript"/> <img src="https://skillicons.dev/icons?i=rust" alt="Rust"/> </p>
 </td>
 <!-- END LATEST REPO SECTION -->
 </tr>
