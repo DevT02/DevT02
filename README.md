@@ -1,7 +1,7 @@
 <h1 align="center">Devansh Tayal</h1>
 
 <p align="center">
-  MS in CS @ Columbia • Full-stack + ML systems<br/>
+  MS in CS @ Columbia | prev @ MSU | • Full-stack + ML systems<br/>
   I build fast, practical software - from UI to infra - and I care about performance + clean engineering.
 </p>
 
