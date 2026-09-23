@@ -88,9 +88,9 @@
 <!-- BEGIN LATEST REPO SECTION -->
 <td width="33%" valign="top" align="center">
   <h3><img src="https://img.shields.io/badge/NEW-2188ff?style=flat-square" alt="NEW"> Most Recent</h3>
-  <a href="https://github.com/DevT02/ForgetGate"><b>ForgetGate</b></a>
-  <p>Auditing machine unlearning with the recovery radius: a fragility confound in selective-leakage metrics, plus a certified input-space recovery floor.</p>
-  <p><img src="https://skillicons.dev/icons?i=bibtex" alt="BibTeX"/> <img src="https://skillicons.dev/icons?i=style" alt="Style"/> <img src="https://skillicons.dev/icons?i=powershell" alt="PowerShell"/> <img src="https://skillicons.dev/icons?i=python" alt="Python"/> <img src="https://skillicons.dev/icons?i=shell" alt="Shell"/> <img src="https://skillicons.dev/icons?i=tex" alt="TeX"/> </p>
+  <a href="https://github.com/DevT02/centaur-feedback"><b>centaur-feedback</b></a>
+  <p>Public feedback and security reporting for Centaur</p>
+  <p></p>
 </td>
 <!-- END LATEST REPO SECTION -->
 </tr>
